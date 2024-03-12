@@ -1,16 +1,22 @@
 <div class="container">
     <form>
+        <h1>Calculadora</h1>
         <div class="operações">
-            
+            <select name="operation" id="operation" [(ngModel)]="operation" (click)="select()">
+                <option value="soma">Somar</option>
+                <option value="subtração">Subtrair</option>
+                <option value="multiplicação">Multiplicar</option>
+                <option value="divisão">Dividir</option>
+                <option value="potência">Elevar</option>
+                <option value="raiz">Raiz</option>
+            </select>
             <input type="number" [(ngModel)]="num1" name="num1" >
             <input type="number" [(ngModel)]="num2" name="num2" >
-            <button (click)="onClickSum()">Somar</button>
-            
-        </div>
-        <div class="resultado">
-            <h2>Resultado</h2>
-            {{sum}}
-        </div>
+            <button (click)="onClickSum()">Resultado</button> 
+            <div class="resultado">
+                <h1>{{sum}}</h1>
+                </div>  
+            </div>
     </form>
 </div>
 
