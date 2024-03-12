@@ -1,7 +1,17 @@
-<form>
-    <input type="number" [(ngModel)]="num1" name="num1" >
-    <input type="number" [(ngModel)]="num2" name="num2" >
-    <button (click)="onClickSum()">Somar</button>
-    {{sum}}
-    oi
-</form>
+<div class="container">
+    <form>
+        <div class="operações">
+            
+            <input type="number" [(ngModel)]="num1" name="num1" >
+            <input type="number" [(ngModel)]="num2" name="num2" >
+            <button (click)="onClickSum()">Somar</button>
+            
+        </div>
+        <div class="resultado">
+            <h2>Resultado</h2>
+            {{sum}}
+        </div>
+    </form>
+</div>
+
+
