@@ -1,23 +1,45 @@
-<div class="container">
-    <form>
-        <h1>Calculadora</h1>
-        <div class="operações">
-            <select name="operation" id="operation" [(ngModel)]="operation" (click)="select()">
-                <option value="soma">Somar</option>
-                <option value="subtração">Subtrair</option>
-                <option value="multiplicação">Multiplicar</option>
-                <option value="divisão">Dividir</option>
-                <option value="potência">Elevar</option>
-                <option value="raiz">Raiz</option>
-            </select>
-            <input type="number" [(ngModel)]="num1" name="num1" >
-            <input type="number" [(ngModel)]="num2" name="num2" >
-            <button (click)="onClickSum()">Resultado</button> 
-            <div class="resultado">
-                <h1>{{sum}}</h1>
-                </div>  
+<body>
+    <div class="container">
+
+        <div class="calc">
+            <img src="assets/images/calculate_24.svg" alt="Calculadora" class="logo_calc">
+            <div class="calc_title">
+                Calculadora
             </div>
-    </form>
-</div>
+            <input type="number" [(ngModel)]="num1" />
+            <input type="number" [(ngModel)]="num2" />
+          
+            <div class="button_calc">
+                <button (click)="calc('+')">+</button>
+                <button (click)="calc('-')">-</button>
+                <button (click)="calc('*')">*</button>
+                <button (click)="calc('/')">/</button>
+                <button (click)="calc('^')">^</button>
+                <button (click)="calc('√')">√</button>
+            </div>
+            
+          
+            <input type="text" [value]="output" readonly />
+        </div>
+    
+        <div class="history">
+            <div class="history_title">
+                Histórico:
+            </div>  
+            <div class="last_operation">
+                <small>10 ultimas operações:</small>
+                <div id="history">
+                    <ul>
+                        <li *ngFor="let item of history">
+                            <p>{{item}}</p>
+                        </li>
+                    </ul>  
+                </div>
+            </div>
+             
+        </div>
+    </div>
+</body>
+
 
 
